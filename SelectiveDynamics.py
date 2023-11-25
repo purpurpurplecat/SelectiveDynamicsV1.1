@@ -89,10 +89,10 @@ def _dividing_layers(layer_distance, number, element_num, POSCAR_lines):
                     for i, layer in enumerate(layers):
                         if min_fix_layers <= i+1 <= max_fix_layers:
                             for fixcoordin in layer:
-                                fix_file.write("{:<15}{:<15}{:<15}F F F\n".format(fixcoordin[0], fixcoordin[1], fixcoordin[2]))
+                                fix_file.write("        {0:^9.10f}        {1:^9.10f}        {2:^9.10f}  F F F\n".format(fixcoordin[0], fixcoordin[1], fixcoordin[2]))
                         else:
                             for movecoordin in layer:
-                                fix_file.write("{:<15}{:<15}{:<15}T T T\n".format(movecoordin[0], movecoordin[1], movecoordin[2]))
+                                fix_file.write("        {0:^9.10f}        {1:^9.10f}        {2:^9.10f}  T T T\n".format(movecoordin[0], movecoordin[1], movecoordin[2]))
                 break
                         # print(f"第{i+1}层为{layer}")    
 
